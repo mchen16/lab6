@@ -19,7 +19,6 @@ Part 1: Programming with lazy streams
 Recall the lazy stream type and associated functions from lecture,
 here packaged up into a module. *)
 
-
 module LazyStream =
   struct
 
@@ -69,7 +68,8 @@ let rec twos = fun () -> Cons(2, twos) ;;
 
 (* An infinite stream of threes, built from the ones and twos. *)
 
-let threes = fun () -> smap2 (fun x y -> x + y) ones twos ;;
+let threes = fun () -> failwith "fsdfa" ;;
+(*smap2 (fun x y -> x + y) ones twos ;; *)
 
 (* An infinite stream of natural numbers (0, 1, 2, 3, ...). *)
 
