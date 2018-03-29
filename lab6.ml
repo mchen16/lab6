@@ -68,8 +68,7 @@ let rec twos = fun () -> Cons(2, twos) ;;
 
 (* An infinite stream of threes, built from the ones and twos. *)
 
-let threes = fun () -> failwith "fsdfa" ;;
-(*smap2 (fun x y -> x + y) ones twos ;; *)
+let threes = fun () -> smap2 (fun x y -> x + y) ones twos ;;
 
 (* An infinite stream of natural numbers (0, 1, 2, 3, ...). *)
 
