@@ -68,11 +68,15 @@ let rec twos = fun () -> Cons(2, twos) ;;
 
 (* An infinite stream of threes, built from the ones and twos. *)
 
-let threes = fun () -> smap2 (fun x y -> x + y) ones twos ;;
+let threes = smap2 (fun x y -> x + y) ones twos ;;
 
 (* An infinite stream of natural numbers (0, 1, 2, 3, ...). *)
 
-let nats = fun () -> failwith "nats not implemented" ;;
+let rec nats =
+  let counter = ref (-1) in
+  fun () ->
+    counter := !counter + 1 ;
+    Cons(counter, nats) ;;
 
 (* Now some new examples. For these, don't build them directly, but
 make use of the stream mapping functions. *)
